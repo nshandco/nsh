@@ -2,21 +2,35 @@
 
 export default function OurStory() {
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: 'white', color: '#1d1d1f', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}>
+    <main style={{ 
+      minHeight: '100vh', 
+      backgroundColor: 'white', 
+      color: '#1d1d1f', 
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      WebkitFontSmoothing: 'antialiased'
+    }}>
       
-      {/* 1. PROFESSIONAL HERO SECTION */}
-      <section style={{ height: '40vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f5f5f7', borderBottom: '1px solid #e5e5e7' }}>
-        <div style={{ textAlign: 'center', padding: '0 24px' }}>
+      {/* WINDOWS/NAVBAR FIX: Ensures content starts below the fixed header */}
+      <div style={{ height: '100px', width: '100%' }}></div>
+
+      {/* 1. PROFESSIONAL HERO SECTION - Updated with Padding for Scaling */}
+      <section style={{ 
+        padding: '120px 24px', 
+        textAlign: 'center', 
+        backgroundColor: '#f5f5f7', 
+        borderBottom: '1px solid #e5e5e7' 
+      }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(40px, 8vw, 72px)', fontWeight: 800, letterSpacing: '-0.04em', margin: 0 }}>Our Journey.</h1>
-          <p style={{ fontSize: '20px', color: '#86868b', marginTop: '16px', fontWeight: 500 }}>A Legacy of Precision and Trust.</p>
+          <p style={{ fontSize: '22px', color: '#86868b', marginTop: '16px', fontWeight: 500 }}>A Legacy of Precision and Trust.</p>
         </div>
       </section>
 
       {/* 2. MAIN CONTENT CONTAINER */}
       <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 24px' }}>
         
-        {/* FIRM STATS GRID (Data from your Screenshot) */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px', marginBottom: '100px' }}>
+        {/* FIRM STATS GRID */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', marginBottom: '100px' }}>
           {[
             { label: "Offices in India", value: "2", color: "rgba(0, 113, 227, 0.04)" },
             { label: "Partners", value: "4", color: "rgba(94, 92, 230, 0.04)" },
@@ -43,7 +57,7 @@ export default function OurStory() {
           </blockquote>
 
           {/* 3. MISSION & VISION SECTION */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px', marginTop: '100px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px', marginTop: '100px' }}>
             <div style={{ padding: '64px 48px', borderRadius: '40px', backgroundColor: '#ffffff', border: '1px solid #e5e5e7', boxShadow: '0 10px 30px rgba(0,0,0,0.02)' }}>
               <h3 style={{ fontSize: '11px', fontWeight: '800', letterSpacing: '0.3em', textTransform: 'uppercase', color: '#0071e3', marginBottom: '24px' }}>Our Vision</h3>
               <p style={{ fontSize: '20px', fontWeight: '700', lineHeight: '1.5', color: '#1d1d1f', margin: 0 }}>To be the gold standard of professional integrity, recognized globally as the architects of financial transparency.</p>
@@ -54,7 +68,7 @@ export default function OurStory() {
             </div>
           </div>
 
-          {/* 4. PERSONALIZED ETHICAL FRAMEWORK SECTION */}
+          {/* 4. ETHICAL FRAMEWORK SECTION */}
           <div style={{ marginTop: '120px', borderTop: '1px solid #eee', paddingTop: '100px', paddingBottom: '120px' }}>
             <div style={{ marginBottom: '64px', textAlign: 'center' }}>
               <h3 style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#0071e3', marginBottom: '16px' }}>Corporate Philosophy</h3>
@@ -102,18 +116,10 @@ export default function OurStory() {
                   border: '1px solid rgba(0,0,0,0.02)',
                   display: 'flex',
                   flexDirection: 'column',
-                  minHeight: '280px',
-                  transition: 'transform 0.3s ease'
+                  minHeight: '280px'
                 }}>
-                  {/* Floating blue accent bar with subtle shadow */}
-                  <div style={{ 
-                    width: '36px', 
-                    height: '3px', 
-                    backgroundColor: '#0071e3', 
-                    marginBottom: '28px', 
-                    boxShadow: '0 2px 10px rgba(0,113,227,0.3)' 
-                  }} />
-                  <h4 style={{ fontSize: '22px', fontWeight: '800', color: '#1d1d1f', margin: '0 0 16px 0', lineHeight: '1.2', letterSpacing: '-0.02em' }}>
+                  <div style={{ width: '36px', height: '3px', backgroundColor: '#0071e3', marginBottom: '28px' }} />
+                  <h4 style={{ fontSize: '22px', fontWeight: '800', color: '#1d1d1f', margin: '0 0 16px 0', lineHeight: '1.2' }}>
                     {item.text}
                   </h4>
                   <p style={{ fontSize: '15px', color: '#636366', margin: 0, lineHeight: '1.6', fontWeight: '500' }}>
@@ -126,7 +132,6 @@ export default function OurStory() {
         </div>
       </section>
 
-      {/* 5. FOOTER */}
       <footer style={{ padding: '80px 24px', textAlign: 'center', color: '#86868b', fontSize: '13px', backgroundColor: '#f5f5f7', borderTop: '1px solid #e5e5e7' }}>
         © 2026 NSH & CO. [ Chartered Accountants ] • Precision in Audit • Strategic Tax Advisory
       </footer>
