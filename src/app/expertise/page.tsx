@@ -1,45 +1,151 @@
 "use client";
 
-const services = [
-  {
-    title: "Audit & Assurance",
-    desc: "Delivering statutory and internal audits that go beyond compliance to provide actionable business insights. We specialize in zero-error reporting and internal control assessments.",
-    features: ["Statutory Audit", "Internal & Management Audit", "Tax Audit (44AB)"]
-  },
-  {
-    title: "Tax & Regulatory",
-    desc: "Navigating the complexities of Direct and Indirect Taxation. From GST litigation and appeals to sophisticated international tax planning for inbound investment.",
-    features: ["GST Advisory & Litigation", "Income Tax Planning", "TDS/TCS Compliance"]
-  },
-  {
-    title: "Advisory & Corporate Law",
-    desc: "Strategic support for startups and corporate houses. We handle ROC filings, company formations, and secretarial audits with absolute precision.",
-    features: ["Company Law (MCA) Compliance", "Startup Mentoring", "Ind AS Implementation"]
-  }
-];
-
 export default function Expertise() {
+  const majorServices = [
+    {
+      title: "Audit & Assurance",
+      mainDesc: "Delivering independent, high-fidelity audits that ensure statutory compliance and build stakeholder trust.",
+      subServices: ["Statutory & Tax Audit", "Internal & Management Audit", "Stock & Receivables Audit"],
+      color: "rgba(0, 113, 227, 0.05)",
+      accent: "#0071e3"
+    },
+    {
+      title: "Taxation & Regulatory",
+      mainDesc: "Navigating complex fiscal landscapes through strategic planning and rigorous compliance management.",
+      subServices: ["Direct & Indirect Tax", "GST Advisory & Filing", "International Taxation"],
+      color: "rgba(94, 92, 230, 0.05)",
+      accent: "#5e5ce6"
+    },
+    {
+      title: "Corporate Advisory",
+      mainDesc: "Providing the technical depth required for structural growth, mergers, and financial restructuring.",
+      subServices: ["Company Law Matters", "Project Financing", "Transaction Advisory"],
+      color: "rgba(175, 82, 222, 0.05)",
+      accent: "#af52de"
+    },
+    {
+      title: "Management Consultancy",
+      mainDesc: "Proactive business solutions designed to optimize operational efficiency and financial health.",
+      subServices: ["Business Valuation", "MIS & Internal Controls", "Risk Management"],
+      color: "rgba(0, 113, 227, 0.05)",
+      accent: "#0071e3"
+    },
+    {
+      title: "Startup & FDI Support",
+      mainDesc: "Comprehensive support for new ventures and foreign entities entering the Indian market.",
+      subServices: ["Entity Incorporation", "FEMA Compliance", "Startup India Registration"],
+      color: "rgba(94, 92, 230, 0.05)",
+      accent: "#5e5ce6"
+    },
+    {
+      title: "Accounting & Outsourcing",
+      mainDesc: "Streamlined financial reporting and back-office support to let you focus on core business growth.",
+      subServices: ["Bookkeeping Services", "Payroll Management", "Financial Statement Prep"],
+      color: "rgba(175, 82, 222, 0.05)",
+      accent: "#af52de"
+    }
+  ];
+
   return (
-    <main style={{ minHeight: '100vh', backgroundColor: '#fff', paddingTop: '100px', fontFamily: '-apple-system, sans-serif' }}>
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 24px' }}>
-        <h1 style={{ fontSize: 'clamp(44px, 7vw, 72px)', fontWeight: 700, letterSpacing: '-0.03em', marginBottom: '60px' }}>Expertise.</h1>
+    <main style={{ minHeight: '100vh', backgroundColor: 'white', color: '#1d1d1f', fontFamily: '-apple-system, sans-serif' }}>
+      
+      {/* VIBRANT GRADIENT HERO SECTION */}
+      <section style={{ 
+        height: '55vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        background: 'linear-gradient(135deg, #001d3d 0%, #003566 50%, #0071e3 100%)', 
+        color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
+      }}>
+        <div style={{ textAlign: 'center', padding: '0 24px', zIndex: 2 }}>
+          <h3 style={{ fontSize: '12px', fontWeight: '800', letterSpacing: '0.4em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.6)', marginBottom: '24px' }}>Expertise & Practices</h3>
+          <h1 style={{ fontSize: 'clamp(48px, 9vw, 84px)', fontWeight: 800, letterSpacing: '-0.04em', margin: 0 }}>Our Expertise.</h1>
+          <p style={{ 
+            fontSize: '24px', 
+            color: 'rgba(255,255,255,0.9)', 
+            marginTop: '32px', 
+            maxWidth: '850px', 
+            margin: '32px auto 0',
+            lineHeight: '1.5',
+            fontWeight: 400 
+          }}>
+            Precision in Audit. Strategy in Tax. Excellence in Advisory.
+          </p>
+        </div>
+      </section>
+
+      {/* STRUCTURED UNIFORM GRID */}
+      <section style={{ maxWidth: '1250px', margin: '-80px auto 100px', padding: '0 24px', position: 'relative', zIndex: 3 }}>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
-          {services.map((s, i) => (
-            <div key={i} style={{ padding: '48px', backgroundColor: '#fbfbfd', borderRadius: '40px', border: '1px solid #eee' }}>
-              <h3 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '20px', color: '#0071e3' }}>{s.title}</h3>
-              <p style={{ fontSize: '17px', lineHeight: '1.6', color: '#424245', marginBottom: '32px' }}>{s.desc}</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {s.features.map((f, idx) => (
-                  <li key={idx} style={{ fontSize: '14px', fontWeight: 600, color: '#1d1d1f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ width: '4px', height: '4px', backgroundColor: '#0071e3', borderRadius: '50%' }} /> {f}
-                  </li>
-                ))}
-              </ul>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '32px' }}>
+          {majorServices.map((service, i) => (
+            <div key={i} style={{ 
+              padding: '60px 48px', 
+              borderRadius: '40px', 
+              backgroundColor: '#ffffff', 
+              border: '1px solid #e5e5e7',
+              boxShadow: '0 30px 60px rgba(0,0,0,0.08)',
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '520px' // Increased height for better spacing
+            }}>
+              <div style={{ width: '48px', height: '4px', backgroundColor: service.accent, borderRadius: '2px', marginBottom: '32px' }} />
+              
+              <h3 style={{ fontSize: '32px', fontWeight: '800', marginBottom: '20px', letterSpacing: '-0.03em', color: '#1d1d1f', lineHeight: '1.1' }}>
+                {service.title}
+              </h3>
+              
+              <p style={{ fontSize: '18px', color: '#636366', lineHeight: '1.6', marginBottom: '48px', fontWeight: '400' }}>
+                {service.mainDesc}
+              </p>
+
+              {/* SPACED LIST ITEMS */}
+              <div style={{ marginTop: 'auto', borderTop: '1px solid #f5f5f7', paddingTop: '40px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                  {service.subServices.map((sub, idx) => (
+                    <li key={idx} style={{ 
+                      fontSize: '18px', // Increased font for list
+                      color: '#1d1d1f', 
+                      padding: '12px 0', // Added vertical space between items
+                      display: 'flex', 
+                      alignItems: 'center',
+                      fontWeight: '600',
+                      letterSpacing: '-0.01em'
+                    }}>
+                      {sub}<span style={{ color: service.accent, marginLeft: '8px', fontSize: '20px' }}>•</span> 
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
       </section>
+
+      {/* CTA SECTION */}
+      <section style={{ textAlign: 'center', padding: '120px 24px', backgroundColor: '#f5f5f7', borderRadius: '60px', margin: '0 24px 100px' }}>
+        <h2 style={{ fontSize: '48px', fontWeight: '800', letterSpacing: '-0.03em', marginBottom: '20px' }}>Ready to engage?</h2>
+        <p style={{ color: '#86868b', fontSize: '22px', marginBottom: '48px', maxWidth: '600px', margin: '0 auto 48px' }}>Connect with our qualified partners for a technical consultation.</p>
+        <button style={{ 
+          backgroundColor: '#0071e3', 
+          color: 'white', 
+          padding: '20px 48px', 
+          borderRadius: '100px', 
+          border: 'none', 
+          fontWeight: '700', 
+          fontSize: '18px',
+          cursor: 'pointer' 
+        }}>
+          Contact Our Firm
+        </button>
+      </section>
+
+      <footer style={{ padding: '80px 24px', textAlign: 'center', color: '#86868b', fontSize: '14px', borderTop: '1px solid #e5e5e7' }}>
+        © 2026 NSH & CO. [ Chartered Accountants ] • Accuracy • Integrity • Confidentiality
+      </footer>
     </main>
   );
 }

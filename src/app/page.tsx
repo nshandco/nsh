@@ -27,7 +27,7 @@ export default function Home() {
     <main style={{ minHeight: '100vh', backgroundColor: 'white', color: '#1d1d1f', overflowX: 'hidden', fontFamily: '-apple-system, sans-serif' }}>
       
       {/* SECTION 1: HERO (Apple-Inspired) */}
-      <section style={{ position: 'relative', paddingTop: '160px', paddingBottom: '100px', paddingLeft: '24px', paddingRight: '24px', minHeight: '90vh', display: 'flex', alignItems: 'center' }}>
+      <section style={{ position: 'relative', paddingTop: '120px', paddingBottom: '60px', paddingLeft: '24px', paddingRight: '24px', minHeight: '80vh', display: 'flex', alignItems: 'center' }}>
         {/* Animated Mesh Gradient background */}
         <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '70%', height: '70%', backgroundColor: 'rgba(0, 113, 227, 0.06)', filter: 'blur(160px)', borderRadius: '50%' }} />
         

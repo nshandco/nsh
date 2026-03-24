@@ -1,36 +1,37 @@
 "use client";
 export default function Connect() {
   return (
-    <main className="min-h-screen pt-[150px] pb-32 bg-white">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20">
-        <div>
-          <h1 className="text-6xl font-bold mb-10 tracking-tight">Let's Connect.</h1>
-          <div className="space-y-12">
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-4">Direct Lines</h4>
-              <p className="text-2xl font-bold text-gray-900">CA Shrey Gupta: +91 8078662941</p>
-              <p className="text-2xl font-bold text-gray-900">CA Naman Jain: +91 8377839857</p>
+    <main style={{ minHeight: '100vh', backgroundColor: 'white', paddingTop: '120px' }}>
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        <h1 style={{ fontSize: '64px', fontWeight: 800, marginBottom: '60px' }}>Connect.</h1>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+          {/* COLUMN 1: THE FORM */}
+          <div>
+            <form style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              <input placeholder="Full Name" style={{ padding: '20px', borderRadius: '15px', border: '1px solid #eee', backgroundColor: '#f5f5f7' }} />
+              <input placeholder="Phone Number" style={{ padding: '20px', borderRadius: '15px', border: '1px solid #eee', backgroundColor: '#f5f5f7' }} />
+              <input placeholder="Company (Optional)" style={{ padding: '20px', borderRadius: '15px', border: '1px solid #eee', backgroundColor: '#f5f5f7' }} />
+              <textarea placeholder="Your Message" rows={5} style={{ padding: '20px', borderRadius: '15px', border: '1px solid #eee', backgroundColor: '#f5f5f7' }} />
+              <button style={{ padding: '20px', borderRadius: '40px', backgroundColor: '#0071e3', color: 'white', fontWeight: 'bold', border: 'none', cursor: 'pointer' }}>Send Message</button>
+            </form>
+          </div>
+
+          {/* COLUMN 2: MAP & INFO */}
+          <div>
+            <div style={{ borderRadius: '40px', overflow: 'hidden', height: '300px', backgroundColor: '#eee', marginBottom: '30px' }}>
+              {/* Replace with actual Google Maps Embed link */}
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.562064115312!2d77.2273!3d28.6139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM2JzUwLjAiTiA3N8KwMTMnMzguMyJF!5e0!3m2!1sen!2sin!4v1620000000000" 
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" 
+              />
             </div>
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-4">Official Support</h4>
-              <p className="text-2xl font-bold text-gray-900">Support@nshca.com</p>
-            </div>
-            <div>
-              <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-4">Visit Us</h4>
-              <p className="text-xl font-medium leading-relaxed text-gray-600">
-                Plot No. 3B, Lane 2, Westend Marg, Saidulajab,<br/>
-                Saket Metro Station Gate 2, New Delhi 110030
-              </p>
-            </div>
+            <h3 style={{ fontSize: '20px', fontWeight: '700' }}>HQ: Delhi-NCR</h3>
+            <p style={{ color: '#666', marginTop: '10px' }}>123 Professional Suite, New Delhi, India</p>
+            <p style={{ color: '#0071e3', fontWeight: 'bold', marginTop: '20px' }}>contact@nshco.in</p>
           </div>
         </div>
-        <div className="rounded-[4rem] bg-gray-100 overflow-hidden border border-gray-100 shadow-inner flex items-center justify-center min-h-[500px]">
-           <p className="text-gray-400 font-bold uppercase tracking-widest text-sm italic text-center">
-             Google Maps Interface<br/>
-             <span className="text-[10px] opacity-50">[ Saidulajab, New Delhi ]</span>
-           </p>
-        </div>
-      </div>
+      </section>
     </main>
   );
 }
