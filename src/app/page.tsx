@@ -1,65 +1,73 @@
-import Image from "next/image";
+"use client";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
+const testimonials = [
+  { text: "The precision and speed at which NSH & Co. handles our audits is unmatched. They feel like an extension of our own team.", name: "Vikram Sethi, CEO of NexGen Tech" },
+  { text: "Navigating GST litigation was a nightmare until we partnered with Naman and his team. Their expertise saved us months of stress.", name: "Ananya Iyer, Director of Operations" },
+  { text: "Strategic, deep-thinking, and reliable. NSH & Co. helped our startup scale from seed to Series A with perfect compliance.", name: "Karan Malhotra, Founder" }
+];
 
 export default function Home() {
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => setActiveIdx((c) => (c + 1) % testimonials.length), 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{ minHeight: '100vh', backgroundColor: 'white', color: '#1d1d1f', overflowX: 'hidden', fontFamily: '-apple-system, sans-serif' }}>
+      
+      {/* HERO SECTION */}
+      <section style={{ position: 'relative', paddingTop: '160px', paddingBottom: '100px', paddingLeft: '24px', paddingRight: '24px', minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+        {/* Mesh Gradients */}
+        <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '70%', height: '70%', backgroundColor: 'rgba(59, 130, 246, 0.08)', filter: 'blur(160px)', borderRadius: '50%' }} />
+        <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '60%', height: '60%', backgroundColor: 'rgba(129, 140, 248, 0.08)', filter: 'blur(160px)', borderRadius: '50%' }} />
+        
+        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '48px', position: 'relative', zIndex: 10 }}>
+          <div style={{ gridColumn: 'span 8' }}>
+            <h2 style={{ fontSize: '14px', fontWeight: 'bold', letterSpacing: '0.4em', textTransform: 'uppercase', color: '#0071e3', marginBottom: '32px' }}>Established Pedigree</h2>
+            <h1 style={{ fontSize: 'clamp(48px, 6vw, 88px)', fontWeight: 'bold', letterSpacing: '-0.05em', lineHeight: '1.05', marginBottom: '40px' }}>
+              Big 4 Expertise. <br/>
+              <span style={{ color: '#0071e3', fontStyle: 'italic' }}>Uncompromising Bespoke Care.</span>
+            </h1>
+            <p style={{ fontSize: '24px', color: '#86868b', maxWidth: '640px', marginBottom: '48px', lineHeight: '1.5', fontWeight: '500' }}>
+              Global-standard financial auditing and strategic tax advisory, delivered with the agility and personal touch of a boutique firm.
+            </p>
+            <div style={{ display: 'flex', gap: '24px' }}>
+               <Link href="/connect" style={{ backgroundColor: '#0071e3', color: 'white', padding: '16px 40px', borderRadius: '40px', fontSize: '18px', fontWeight: '600', textDecoration: 'none' }}>Start Consultation</Link>
+               <Link href="/expertise" style={{ backgroundColor: '#f5f5f7', color: 'black', padding: '16px 40px', borderRadius: '40px', fontSize: '18px', fontWeight: '600', textDecoration: 'none' }}>View Services</Link>
+            </div>
+          </div>
+
+          {/* Right Side Info Card */}
+          <div style={{ gridColumn: 'span 4', display: 'flex', alignItems: 'center' }}>
+             <div style={{ padding: '32px', borderRadius: '48px', background: 'linear-gradient(180deg, #fff 0%, #f9f9fb 100%)', border: '1px solid #eee', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', width: '100%' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><div style={{ width: '8px', height: '8px', backgroundColor: '#3b82f6', borderRadius: '50%' }} /><p style={{ fontSize: '12px', fontWeight: 'bold', color: '#86868b', letterSpacing: '0.1em' }}>DELHI-NCR HQ</p></div>
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><div style={{ width: '8px', height: '8px', backgroundColor: '#a855f7', borderRadius: '50%' }} /><p style={{ fontSize: '12px', fontWeight: 'bold', color: '#86868b', letterSpacing: '0.1em' }}>15+ PROFESSIONALS</p></div>
+                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}><div style={{ width: '8px', height: '8px', backgroundColor: '#6366f1', borderRadius: '50%' }} /><p style={{ fontSize: '12px', fontWeight: 'bold', color: '#86868b', letterSpacing: '0.1em' }}>BIG 4 PEDIGREE</p></div>
+                </div>
+             </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* DYNAMIC TESTIMONIAL SLIDER */}
+      <section style={{ padding: '96px 24px', backgroundColor: 'white', borderTop: '1px solid #f2f2f2', borderBottom: '1px solid #f2f2f2' }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          {testimonials.map((t, i) => (
+            <div key={i} style={{ 
+              position: 'absolute', opacity: i === activeIdx ? 1 : 0, 
+              transition: 'opacity 0.8s ease-in-out', textAlign: 'center'
+            }}>
+              <p style={{ fontSize: '28px', fontStyle: 'italic', fontWeight: '500', color: '#333', lineHeight: '1.4' }}>"{t.text}"</p>
+              <p style={{ marginTop: '32px', color: '#0071e3', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '12px' }}> {t.name} </p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
